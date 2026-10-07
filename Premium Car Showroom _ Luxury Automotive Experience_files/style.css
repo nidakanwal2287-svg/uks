@@ -1,0 +1,222 @@
+/* Luxury Royal Sapphire & Pearl Platinum Theme (NO PITCH BLACK) */
+:root {
+  --bg-dark: #0e1e38;           /* Rich Royal Sapphire / Midnight Blue */
+  --card-bg: #182d4d;           /* Deep Blue Slate / Metallic Navy */
+  --accent: #38bdf8;            /* Vibrant Electric Sky Blue */
+  --accent-glow: rgba(56, 189, 248, 0.4);
+  --accent-gold: #fbbf24;       /* Royal Gold */
+  --accent-crimson: #f43f5e;    /* Sporty Coral Red */
+  --text-white: #FFFFFF;        /* Pure White */
+  --text-gray: #cbd5e1;         /* Silver Platinum Gray */
+  
+  --primary: #38bdf8;
+  --secondary: #182d4d;
+  --background: #0e1e38;
+  --text: #FFFFFF;
+  --gray: #cbd5e1;
+  --glass-border: rgba(56, 189, 248, 0.2);
+}
+
+/* Base resets & typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at 50% 0%, #17325c 0%, #0e1e38 75%);
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Sapphire Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e1e38;
+}
+::-webkit-scrollbar-thumb {
+  background: #254673;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Glassmorphism & Surface Styles */
+.glass {
+  background: rgba(24, 45, 77, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(5, 15, 30, 0.5);
+}
+
+/* Hover Effects on Car Cards: Glow & scale */
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.15), transparent);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+.glass-card:hover::before {
+  left: 140%;
+}
+
+/* Neon Glow Utilities */
+.neon-glow {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+}
+
+.neon-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  color: #FFFFFF;
+  border: 1px solid #7dd3fc;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  transition: all 0.3s ease;
+}
+.neon-btn:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.7);
+  transform: translateY(-2px);
+}
+
+.crimson-btn {
+  background: linear-gradient(135deg, #e11d48 0%, #fb7185 100%);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.35);
+  transition: all 0.3s ease;
+}
+.crimson-btn:hover {
+  box-shadow: 0 0 30px rgba(244, 63, 94, 0.7);
+  transform: translateY(-2px);
+}
+
+.gold-btn {
+  background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+  color: #0e1e38;
+  font-weight: 800;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  transition: all 0.3s ease;
+}
+.gold-btn:hover {
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Custom Text Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 40%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3D Interactive Customizer Card */
+.showroom-preview {
+  background: var(--card-bg);
+  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 15px 40px rgba(5, 15, 30, 0.8);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.showroom-preview:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+}
+
+.car-display {
+  width: 100%;
+  height: 380px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.6s ease, transform 0.4s ease;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.color-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.color-btn:hover, .color-btn.active {
+  transform: scale(1.25);
+  border-color: #38bdf8;
+  box-shadow: 0 0 18px #38bdf8;
+}
+
+/* Light Mode Overrides (Crisp Luxury Pearl White) */
+body.light-theme {
+  --bg-dark: #f8fafc;
+  --card-bg: #ffffff;
+  --text-white: #0f172a;
+  --text-gray: #475569;
+  --glass-border: rgba(14, 30, 56, 0.12);
+  --background: #f8fafc;
+  --text: #0f172a;
+  background: #f8fafc !important;
+}
+body.light-theme .glass {
+  background: rgba(255, 255, 255, 0.92);
+}
+body.light-theme .glass-card {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+body.light-theme .text-gradient {
+  background: linear-gradient(135deg, #0f172a 40%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

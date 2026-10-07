@@ -1,0 +1,14 @@
+/* Custom Responsive Adjustments */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .mega-menu {
+    position: static !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+}
